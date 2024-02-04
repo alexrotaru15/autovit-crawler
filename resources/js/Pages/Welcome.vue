@@ -146,7 +146,7 @@ const submit = () => {
                                     leave-to-class="transform scale-95 opacity-0"
                                 >
                                     <ComboboxOptions
-                                        class="absolute top-12 left-16 z-50 max-h-52 w-[198px] overflow-y-auto bg-[#394867] rounded-lg"
+                                        class="absolute top-12 left-16 z-50 max-h-64 w-[198px] overflow-y-auto bg-[#394867] rounded-lg"
                                     >
                                         <ComboboxOption
                                             v-for="(
@@ -215,7 +215,7 @@ const submit = () => {
                                 >
                                     <ComboboxOptions
                                         v-show="form.brand && filteredModels"
-                                        class="absolute top-12 left-16 z-50 max-h-52 w-[198px] overflow-y-auto bg-[#394867] rounded-lg"
+                                        class="absolute top-12 left-16 z-50 max-h-64 w-[198px] overflow-y-auto bg-[#394867] rounded-lg"
                                     >
                                         <ComboboxOption
                                             v-for="(
@@ -284,7 +284,7 @@ const submit = () => {
                                         leave-to-class="transform scale-95 opacity-0"
                                     >
                                         <ComboboxOptions
-                                            class="absolute top-12 left-16 z-48 max-h-52 w-[198px] overflow-y-auto bg-[#394867] rounded-lg"
+                                            class="absolute top-12 left-16 z-48 max-h-64 w-[198px] overflow-y-auto bg-[#394867] rounded-lg"
                                         >
                                             <ComboboxOption
                                                 v-for="(

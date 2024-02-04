@@ -21,19 +21,23 @@ class SearchController extends Controller
             'model' => ['required'],
             'year' => ['required'],
         ]);
+        Log::alert('cautare pe ');
+        Log::alert($request->brand);
+        Log::alert($request->model);
+        Log::alert($request->year);
         $url = "https://www.autovit.ro/autoturisme/" . $request->brand . "/" . str_replace(' ', '-', $request->model) . "/de-la-" . $request->year . "?search%5Bfilter_float_year%3Ato%5D=" . $request->year . "";
         $prices = [];
         $sum = 0;
         $crawler = \Weidner\Goutte\GoutteFacade::request('GET', $url);
-        $pages = $crawler->filter('.e1f09v7o0')
+        // Log::alert(json_encode($crawler));
+        $pages = $crawler->filter('.eezyyk50')
             ->each(function ($node) {
                 return $node->text();
             });
-
         if ($pages) {
             foreach ($pages as $page) {
                 $crawler = \Weidner\Goutte\GoutteFacade::request('GET', $url . '&page=' . $page);
-                $crawlerData = $crawler->filter('.evg565y11')
+                $crawlerData = $crawler->filter('.e1oqyyyi16')
                     ->each(function ($node) {
                         Log::alert($node->text());
                         return $node->text();
@@ -46,7 +50,7 @@ class SearchController extends Controller
                 }
             }
         } else {
-            $crawlerData = $crawler->filter('.evg565y11')
+            $crawlerData = $crawler->filter('.e1oqyyyi16')
                 ->each(function ($node) {
                     return $node->text();
                 });
